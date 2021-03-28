@@ -1,7 +1,17 @@
+
+import { GeneralProvider } from 'next-arianne'
+import SideLayout from '../layout/SideLayout'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return(<GeneralProvider>
+  <SideLayout>
+    <link rel="stylesheet" href="/styles/dracula.css"></link>
+      <Component {...pageProps} />
+  </SideLayout>
+  </GeneralProvider>
+  ) 
+  
 }
 
 export default MyApp

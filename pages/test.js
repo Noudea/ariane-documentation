@@ -1,4 +1,4 @@
-import {Button} from 'arianne-next'
+import {Button} from 'next-arianne'
 
 
 const test = () => {
