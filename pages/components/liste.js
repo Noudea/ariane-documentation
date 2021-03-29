@@ -1,7 +1,6 @@
 import {
     Container,
     List,
-    ListItem,
     Divider,
     Table
 } from 'next-arianne'
@@ -18,19 +17,17 @@ import Preview from '../../components/preview'
 
 
 const liste = () => {
-    const scope = { List , ListItem , Divider  }
+    const scope = { List , Divider }
 
         const data = [
         {
-            property : 'taille',
-            props : 'xsmall,small,medium,large',
-            type : 'boolean',
+            props : 'size',
+            type : "enum['xs','sm','md','lg']",
             default : 'medium',
             description : 'set la taille du composant',
             exemple : '<List small></List>'
         },
         {
-            property : 'données',
             props : 'data',
             type : 'array',
             default : 'empty',
@@ -38,7 +35,6 @@ const liste = () => {
             exemple : "<List data=['1','2','3']></List>"
         },
         {
-            property : 'recherche',
             props : 'searchable',
             type : 'boolean',
             default : 'false',
@@ -46,7 +42,6 @@ const liste = () => {
             exemple : '<List searchable></List>'
         },
         {
-            property : 'Ordonnée',
             props : 'ordered',
             type : 'boolean',
             default : 'false',
@@ -54,10 +49,6 @@ const liste = () => {
             exemple : '<List ordered></List>'
         },
     ]
-
-
-
-
 
     const codeDefault = `
         <List 

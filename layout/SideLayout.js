@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
-import {NavBar,Tooltip,IconButton,SideNav,SideNavContainer,SideNavHeader,SideNavItem, ThemeColors, ThemeContext , Divider , SideNavDropdown, NavContext, GlobalStyle, LightDarkSwitch} from 'next-arianne'
+import {NavBar,Tooltip,IconButton,SideNav, ThemeColors, ThemeContext , Divider , NavContext, GlobalStyle, LightDarkSwitch} from 'next-arianne'
 
 const SideLayout = ({ children, ...props }) => {
     const { sideNavOpen, setSideNavOpen } = useContext(NavContext);
@@ -20,20 +20,12 @@ const SideLayout = ({ children, ...props }) => {
     const openNav1 = () => {
         expandNav()
         setNav2(false)
-        setNav3(false)
         setNav1(true)
     }
     const openNav2 = () => {
         expandNav()
         setNav1(false)
-        setNav3(false)
         setNav2(true)
-    }
-    const openNav3 = () => {
-        expandNav()
-        setNav1(false)
-        setNav2(false)
-        setNav3(true)
     }
 
     return (
@@ -48,7 +40,7 @@ const SideLayout = ({ children, ...props }) => {
                 }
                 `}</style>
             <NavBar alignement="vertical">
-                <Tooltip textContent="this is a toolTip">
+                <Tooltip textContent="Guides">
                     <IconButton
                         transparent
                         medium
@@ -56,110 +48,110 @@ const SideLayout = ({ children, ...props }) => {
                         onClick={openNav1}
                     ></IconButton>
                 </Tooltip>
-                <IconButton
-                    transparent
-                    medium
-                    iconSrc="/svg/cube.svg"
-                    onClick={openNav2}
-                ></IconButton>
-                <IconButton
-                    transparent
-                    medium
-                    iconSrc="/svg/bell.svg"
-                    onClick={openNav3}
-                ></IconButton>
-                <LightDarkSwitch transparent medium ></LightDarkSwitch>
+                <Tooltip textContent='Composants'>
+                    <IconButton
+                        transparent
+                        medium
+                        iconSrc="/svg/cube.svg"
+                        onClick={openNav2}
+                    ></IconButton>
+                </Tooltip>
+                <Tooltip textContent='switch theme'>
+                    <LightDarkSwitch transparent size='medium' ></LightDarkSwitch>
+                </Tooltip>
                 <SideNav isOpen={navExpand}  targetedClass='main'>
                     {nav1 ?
-                        <SideNavContainer>
-                            <SideNavHeader >Guides</SideNavHeader>
-                            <SideNavItem href='/guides/intro'  width='100%'>
+                        <SideNav.Container>
+                            <SideNav.Header >Guides</SideNav.Header>
+                            <SideNav.Item href='/guides/intro'  width='100%'>
                                 Introduction
-                            </SideNavItem>
-                            <SideNavItem href='/guides/installNextJs'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/guides/installNextJs'  width='100%'>
                                 Installation pour Next.JS
-                            </SideNavItem>
-                            <SideNavItem href='/guides/installReact'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/guides/installReact'  width='100%'>
                                 Installation pour React
-                            </SideNavItem>
-                            <SideNavItem href='/guides/theming'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/guides/theming'  width='100%'>
                                 Theming
-                            </SideNavItem>
-                        </SideNavContainer>
+                            </SideNav.Item>
+                        </SideNav.Container>
                         : null}
                     {nav2 ?
-                    <SideNavContainer>
-                            <SideNavHeader >Composants</SideNavHeader>
+                    <SideNav.Container>
+                            <SideNav.Header >Composants</SideNav.Header>
                             <h4># Général</h4>
                             <Divider margin='5' thin width='85%'></Divider>
-                            <SideNavItem href='/components/loader'  width='100%'>
-                                Loader
-                            </SideNavItem>
-                            <SideNavItem href='/components/tooltip'  width='100%'>
+                            <SideNav.Dropdown textContent='Loaders' width='100%'>
+                                <SideNav.Item href='/components/circleloader'  width='100%'>
+                                    CircleLoader
+                                </SideNav.Item>
+                            </SideNav.Dropdown>
+                            <SideNav.Item href='/components/tooltip'  width='100%'>
                                 ToolTip
-                            </SideNavItem>
-                            <SideNavDropdown textContent='Button' width='100%'>
-                                <SideNavItem href='/components/button'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Dropdown textContent='Button' width='100%'>
+                                <SideNav.Item href='/components/button'  width='100%'>
                                     Button
-                                </SideNavItem>
-                                <SideNavItem href='/components/iconbutton'  width='100%'>
+                                </SideNav.Item>
+                                <SideNav.Item href='/components/iconbutton'  width='100%'>
                                     IconButton
-                                </SideNavItem>
-                            </SideNavDropdown>
-                            <SideNavItem href='/components/divider'  width='100%'>
+                                </SideNav.Item>
+                            </SideNav.Dropdown>
+                            <SideNav.Item href='/components/divider'  width='100%'>
                                 Divider
-                            </SideNavItem>
+                            </SideNav.Item>
                             <h4># Navigation</h4>
                             <Divider margin='5' thin width='85%'></Divider>
-                            <SideNavItem href='/components/navbar'  width='100%'>
+                            <SideNav.Item href='/components/navbar'  width='100%'>
                                 NavBar
-                            </SideNavItem>
-                            <SideNavDropdown textContent='SideNav'>
-                                <SideNavItem href='/components/sidenav'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Dropdown textContent='SideNav'>
+                                <SideNav.Item href='/components/sidenav'  width='100%'>
                                     SideNav
-                                </SideNavItem>
-                                <SideNavItem href='/components/sidenavcontainer'  width='100%'>
-                                    SideNavContainer
-                                </SideNavItem>
-                                <SideNavItem href='/components/sidenavheader'  width='100%'>
-                                    SideNavHeader
-                                </SideNavItem>
-                                <SideNavItem href='/components/sidenavitem'  width='100%'>
-                                    SideNavItem
-                                </SideNavItem>
-                                <SideNavItem href='/components/sidenavdropdown'  width='100%'>
-                                    SideNavDropDown
-                                </SideNavItem>
-                            </SideNavDropdown>
-                            <SideNavItem href='/components/dropdown'  width='100%'>
+                                </SideNav.Item>
+                                <SideNav.Item href='/components/SideNav.Container'  width='100%'>
+                                    SideNav.Container
+                                </SideNav.Item>
+                                <SideNav.Item href='/components/SideNav.Header'  width='100%'>
+                                    SideNav.Header
+                                </SideNav.Item>
+                                <SideNav.Item href='/components/SideNav.Item'  width='100%'>
+                                    SideNav.Item
+                                </SideNav.Item>
+                                <SideNav.Item href='/components/SideNav.Dropdown'  width='100%'>
+                                    SideNav.Dropdown
+                                </SideNav.Item>
+                            </SideNav.Dropdown>
+                            <SideNav.Item href='/components/dropdown'  width='100%'>
                                 DropDown
-                            </SideNavItem>
+                            </SideNav.Item>
                             <h4># Données</h4>
                             <Divider margin='5' thin width='85%'></Divider>
-                            <SideNavItem href='/components/table'  width='100%'>
+                            <SideNav.Item href='/components/table'  width='100%'>
                                 Table
-                            </SideNavItem>
-                            <SideNavItem href='/components/liste'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/components/liste'  width='100%'>
                                 Liste
-                            </SideNavItem>
-                           <SideNavItem href='/components/avatar'  width='100%'>
+                            </SideNav.Item>
+                           <SideNav.Item href='/components/avatar'  width='100%'>
                                 Avatar
-                            </SideNavItem>
-                            <SideNavItem href='/components/tag'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/components/tag'  width='100%'>
                                 Tag
-                            </SideNavItem>
+                            </SideNav.Item>
                             <h4># Providers</h4>
                             <Divider margin='5' thin width='85%'></Divider>
-                            <SideNavItem href='/components/generalprovider'  width='100%'>
+                            <SideNav.Item href='/components/generalprovider'  width='100%'>
                                 General Provider
-                            </SideNavItem>
-                            <SideNavItem href='/components/themeprovider'  width='100%'>
+                            </SideNav.Item>
+                            <SideNav.Item href='/components/themeprovider'  width='100%'>
                                 Theme Provider
-                            </SideNavItem>
-                           <SideNavItem href='/components/navprovider'  width='100%'>
+                            </SideNav.Item>
+                           <SideNav.Item href='/components/navprovider'  width='100%'>
                                 Navigation Provider
-                            </SideNavItem>
-                        </SideNavContainer>
+                            </SideNav.Item>
+                        </SideNav.Container>
                     : null}
                     {nav3 ? <p>Nav3</p> : null}
                 </SideNav>

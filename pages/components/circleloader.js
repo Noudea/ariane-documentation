@@ -11,54 +11,17 @@ import { useContext } from 'react'
 import Highlight from 'react-highlight'
 import Preview from '../../components/preview'
 
-const loader = () => {
-
-
-    // const data = [
-    //     {
-    //         property: 'xsmall',
-    //         type: 'boolean',
-    //         default: 'false',
-    //         description: 'set la taille du composant a xsmall'
-    //     },
-    //     {
-    //         property: 'small',
-    //         type: 'boolean',
-    //         default: 'false',
-    //         description: 'set la taille du composant a small'
-    //     },
-    //     {
-    //         property: 'medium',
-    //         type: 'boolean',
-    //         default: 'true',
-    //         description: 'set la taille du composant a medium'
-    //     },
-    //     {
-    //         property: 'large',
-    //         type: 'boolean',
-    //         default: 'false',
-    //         description: 'set la taille du composant a large'
-    //     },
-    //     {
-    //         property: 'xlarge',
-    //         type: 'boolean',
-    //         default: 'false',
-    //         description: 'set la taille du composant a xlarge'
-    //     }
-        
-    // ]
+const circleloader = () => {
 
     const data = [
         {
-            property : 'size',
-            props : 'xsmall,small,medium,large,xlarge',
-            type : 'boolean',
-            default : 'medium',
+            props : 'size',
+            type : "enum['xs','sm','md','lg','xl']",
+            default : 'md',
             description : 'set la taille du composant',
-            exemple : '<CircleLoader small></CircleLoader>'
+            exemple : "<CircleLoader size='xs'></CircleLoader>"
         },
         {
-            property : 'épaisseur',
             props : 'thin,default,bold',
             type : 'boolean',
             default : 'default',
@@ -66,15 +29,13 @@ const loader = () => {
             exemple : '<CircleLoader bold></CircleLoader>'
         },
         {
-            property : 'vitesse',
-            props : 'slow,normal,fast',
-            type : 'boolean',
+            props : 'speed',
+            type : "enum['slow','normal','fast']",
             default : 'normal',
             description : 'set la vitesse du loader',
-            exemple : '<CircleLoader fast></CircleLoader>'
+            exemple : "<CircleLoader speed='slow'></CircleLoader>"
         },
         {
-            property : 'couleur',
             props : 'color',
             type : 'string',
             default : 'theme based',
@@ -83,7 +44,6 @@ const loader = () => {
         },
     ]
 
-    const colors = ThemeColors[useContext(ThemeContext).theme]
     const scope = { CircleLoader , Flex , Divider }
     const codeDefault = `
         <CircleLoader></CircleLoader>
@@ -98,28 +58,28 @@ const loader = () => {
 
         <Flex flexDirection='column'>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader xsmall></CircleLoader>
-                <p>xsmall</p>
+                <CircleLoader size='xs'></CircleLoader>
+                <p>xs</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader small></CircleLoader>
-                <p>small</p>
+                <CircleLoader size='sm'></CircleLoader>
+                <p>sm</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader medium></CircleLoader>
-                <p>medium</p>
+                <CircleLoader size='md'></CircleLoader>
+                <p>md</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader large></CircleLoader>
-                <p>large</p>
+                <CircleLoader size='lg'></CircleLoader>
+                <p>lg</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader xlarge></CircleLoader>
-                <p>xlarge</p>
+                <CircleLoader size='xl'></CircleLoader>
+                <p>xl</p>
             </Flex>
         </Flex>
     </>
@@ -134,17 +94,17 @@ const loader = () => {
 
         <Flex flexDirection='column'>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader thin large></CircleLoader>
+                <CircleLoader thin size='large'></CircleLoader>
                 <p>thin</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader large></CircleLoader>
+                <CircleLoader size='large'></CircleLoader>
                 <p>default</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader bold large></CircleLoader>
+                <CircleLoader bold size='large'></CircleLoader>
                 <p>bold</p>
             </Flex>
         </Flex>
@@ -160,17 +120,17 @@ const loader = () => {
 
         <Flex flexDirection='column'>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader slow large></CircleLoader>
+                <CircleLoader speed='slow' size='large'></CircleLoader>
                 <p>slow</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader normal large></CircleLoader>
+                <CircleLoader speed='normal' size='large'></CircleLoader>
                 <p>normal</p>
             </Flex>
             <Divider margin='10'></Divider>
             <Flex flexDirection='row' alignItems='center'>
-                <CircleLoader fast large></CircleLoader>
+                <CircleLoader speed='fast' size='large'></CircleLoader>
                 <p>fast</p>
             </Flex>
         </Flex>
@@ -200,18 +160,13 @@ const loader = () => {
     return (
         <>
             <style jsx>{`
-                .container {
-                    background-color: ${colors.main};
-                    padding: 20px;
-                    border-radius: 6px;
-                }
             `}</style>
             <Container>
-                <h1>Loader</h1>
+                <h1>CircleLoader</h1>
                 <p>Un composant qui indique un loading state.</p>
                 <h2>Utilisation</h2>
                 <Highlight className="react">
-                    {`import CircleLoader from 'next-arianne
+                    {`import {CircleLoader} from 'next-arianne
 
 <CircleLoader></CircleLoader>`}
                 </Highlight>
@@ -233,4 +188,4 @@ const loader = () => {
     )
 }
 
-export default loader
+export default circleloader

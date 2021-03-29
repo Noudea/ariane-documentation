@@ -18,10 +18,13 @@ const Preview = (props) => {
         <div className="container">
             <style jsx>{`
                 .container {
-                    background-color: ${colors.main};
                     padding: 20px;
+                    border:1px dashed ${colors.contrast};
                     border-radius: 6px;
                     position: relative;
+                }
+                .container:hover {
+                    border:1px dashed ${colors.accent};
                 }
                 .buttonContainer {
                     position: absolute;
