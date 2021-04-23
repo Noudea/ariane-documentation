@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
-import {NavBar,Tooltip,IconButton,SideNav, ThemeColors, ThemeContext , Divider , NavContext, GlobalStyle, LightDarkSwitch} from 'next-arianne'
+import {NavBar,Tooltip,IconButton,SideNav, ThemeColors, ThemeContext , Divider , NavContext, GlobalStyle, LightDarkSwitch} from 'next-ariane'
 
 const SideLayout = ({ children, ...props }) => {
     const { sideNavOpen, setSideNavOpen } = useContext(NavContext);

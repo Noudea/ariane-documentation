@@ -1,4 +1,4 @@
-import { Container, Table , SideNav , SideNavContainer , SideNavHeader , SideNavItem , NavBar } from "next-arianne"
+import { Container, Table , SideNav , SideNavContainer , SideNavHeader , SideNavItem , NavBar } from "next-ariane"
 import Highlight from "react-highlight"
 import Preview from "../../components/preview"
 
@@ -49,7 +49,7 @@ const sidenav = () => {
                 <p>Un composant qui indique un loading state.</p>
                 <h2>Utilisation</h2>
                 <Highlight className="javascript">
-                    {"import SideNav from 'next-arianne'"}
+                    {"import SideNav from 'next-ariane'"}
                 </Highlight>
                 <h2>Exemples</h2>
                 <h3>Default</h3>

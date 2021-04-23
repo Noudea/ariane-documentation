@@ -1,4 +1,4 @@
-import { IconButton, LightDarkSwitch, ThemeColors, ThemeContext } from 'next-arianne'
+import { IconButton, LightDarkSwitch, ThemeColors, ThemeContext } from 'next-ariane'
 import { useContext, useState } from 'react'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import dracula from 'prism-react-renderer/themes/dracula';

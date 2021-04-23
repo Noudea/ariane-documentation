@@ -6,7 +6,7 @@ import {
     ThemeContext,
     Flex,
     Table,
-} from 'next-arianne'
+} from 'next-ariane'
 import { useContext } from 'react'
 import Highlight from 'react-highlight'
 import Preview from '../../components/preview'
@@ -166,7 +166,7 @@ const circleloader = () => {
                 <p>Un composant qui indique un loading state.</p>
                 <h2>Utilisation</h2>
                 <Highlight className="react">
-                    {`import {CircleLoader} from 'next-arianne
+                    {`import {CircleLoader} from 'next-ariane
 
 <CircleLoader></CircleLoader>`}
                 </Highlight>

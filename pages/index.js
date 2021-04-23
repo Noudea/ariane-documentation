@@ -1,5 +1,5 @@
 
-import {List} from 'next-arianne'
+import {List} from 'next-ariane'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {

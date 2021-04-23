@@ -3,7 +3,7 @@ import {
     List,
     Divider,
     Table
-} from 'next-arianne'
+} from 'next-ariane'
 import Highlight from 'react-highlight'
 import Preview from '../../components/preview'
 
@@ -120,7 +120,7 @@ const liste = () => {
                 </p>
                 <h2>Utilisation</h2>
                 <Highlight className="react">
-                    {`import { List } from 'next-arianne'
+                    {`import { List } from 'next-ariane'
 
 
 <List 

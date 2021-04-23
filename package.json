@@ -1,5 +1,5 @@
 {
-  "name": "ariannedoc",
+  "name": "arianedoc",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "highlight.js": "^10.7.1",
     "next": "10.0.9",
-    "next-arianne": "^0.0.2",
+    "next-ariane": "^0.0.1",
     "prism-react-renderer": "^1.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",

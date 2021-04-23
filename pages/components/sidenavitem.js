@@ -6,7 +6,7 @@ import {
     SideNavHeader,
     SideNavItem,
     NavBar,
-} from 'next-arianne'
+} from 'next-ariane'
 import Highlight from 'react-highlight'
 import Preview from '../../components/preview'
 
@@ -108,7 +108,7 @@ const sidenavitem = () => {
                 <p>Un composant à utiliser avec le composant SideNav, il permet de créer un lien dans la navigation.</p>
                 <h2>Utilisation</h2>
                 <Highlight className="react">
-                    {`import SideNavItem from 'next-arianne'
+                    {`import SideNavItem from 'next-ariane'
 
 
 <SideNavItem href='/monlien'>monlien</SideNavItem>                    
