@@ -1,6 +1,6 @@
 import { Container, Table , SideNav , SideNavContainer , SideNavHeader , SideNavItem , NavBar } from "next-ariane"
 import Highlight from "react-highlight"
-import Preview from "../../components/preview"
+import Preview from "../../components/Preview"
 
 
 const sidenav = () => {

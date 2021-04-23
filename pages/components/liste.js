@@ -5,7 +5,7 @@ import {
     Table
 } from 'next-ariane'
 import Highlight from 'react-highlight'
-import Preview from '../../components/preview'
+import Preview from '../../components/Preview'
 
 
 //props

@@ -9,7 +9,7 @@ import {
 } from 'next-ariane'
 import { useContext } from 'react'
 import Highlight from 'react-highlight'
-import Preview from '../../components/preview'
+import Preview from '../../components/Preview'
 
 const circleloader = () => {
 
