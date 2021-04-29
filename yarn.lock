@@ -1834,10 +1834,10 @@
   dependencies:
     "querystring" "^0.2.0"
 
-"next-ariane@^0.0.1":
-  "integrity" "sha512-e12NP1AVlzHK+BzaSLStWb8xkBoJF6PI/COAp7tIDbFzJ0Kq4tCa40MEgomBYts6OrxpusiEU/lPABCVlxJl6A=="
-  "resolved" "https://registry.npmjs.org/next-ariane/-/next-ariane-0.0.1.tgz"
-  "version" "0.0.1"
+"next-ariane@^0.0.2":
+  "integrity" "sha512-e168UWQytIBfj/u3dCU8XiMpKglLCKcT4kGCBP3XQ1vfGA5DOlqnhGCurgMW+2zb9gjFngnUDrQEpQj1Nr7o1Q=="
+  "resolved" "https://registry.npmjs.org/next-ariane/-/next-ariane-0.0.2.tgz"
+  "version" "0.0.2"
   dependencies:
     "@babel/cli" "^7.13.10"
     "gsap" "^3.6.0"
