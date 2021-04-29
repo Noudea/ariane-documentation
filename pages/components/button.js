@@ -26,10 +26,76 @@ const button = () => {
             description: 'taille du boutton',
             exemple: "<Button size='md'>medium</Button>",
         },
+        {
+            props : 'href',
+            type : "string",
+            default : 'undefined',
+            description : 'chemin du lien',
+            exemple : "<Button href='#'></Button>"
+        },
+        {
+            props: 'size',
+            type: "enum['xs','sm','md','lg']",
+            default: 'md',
+            description: 'taille du boutton',
+            exemple: "<Button size='md'>medium</Button>",
+        },
+        {
+            props: 'bold',
+            type: "boolean",
+            default: 'false',
+            description: 'le texte du bouton est bold',
+            exemple: "<Button bold>Bold</Button>",
+        },
+        {
+            props : 'transparent',
+            type : 'boolean',
+            default : 'false',
+            description : 'set le background du bouton transparent',
+            exemple : "<Button transparent>Transparent</Button>"
+        },
+        {
+            props: 'outlined',
+            type: "boolean",
+            default: 'false',
+            description: 'style le boutton en outlined',
+            exemple: "<Button outlined>Outlined</Button>",
+        },
+        {
+            props: 'customCss',
+            type: "inline style / css",
+            default: 'undefined',
+            description: 'permet de custom le bouton css',
+            exemple: "<Button customCss='background-color : red; width:150px;'>Custom CSS</Button>",
+        },
+        {
+            props: 'iconLeft',
+            type: "boolean",
+            default: 'false',
+            description: 'permet de rajouter un icone du coté gauche, à utiliser avec iconSrc',
+            exemple: "<Button iconLeft iconSrc='mySvg.svg'>iconLeft</Button>",
+        },
+        {
+            props: 'iconRight',
+            type: "boolean",
+            default: 'false',
+            description: 'permet de rajouter un icone du coté droit, à utiliser avec iconSrc',
+            exemple: "<Button iconRight iconSrc='mySvg.svg'>iconLeft</Button>",
+        },
+        {
+            props : 'iconSrc',
+            type : "string",
+            default : 'undefined',
+            description : 'chemin vers le fichier svg ou png',
+            exemple : "<Button iconLeft iconSrc='MySvg.svg'>iconLeft</Button>"
+        },
     ]
 
     const codeDefault = `
 <Button>Mon Boutton</Button>
+    `
+    const codeLink = `
+<Button href='#'>Mon Boutton Lien</Button>    
     `
     const codeSize = `
 <>
@@ -55,7 +121,7 @@ const button = () => {
     <Divider margin='10' ></Divider>
     <Button outlined>Outlined</Button>
     <Divider margin='10' ></Divider>
-    <Button customCss='background-color : red; width:100px; border-radius :20px;text-align:center;color:white;font-weight:600;display:flex;justify-content:center;'>Outlined</Button>
+    <Button customCss='background-color : red; width:150px; border-radius :20px;text-align:center;color:white;font-weight:600;display:flex;justify-content:center;'>Custom CSS</Button>
 </>
     `
     const codeIcons = `
@@ -81,6 +147,8 @@ const button = () => {
                 <h2>Exemples</h2>
                 <h3>Default</h3>
                 <Preview code={codeDefault} scope={scope}></Preview>
+                <h3>Link</h3>
+                <Preview code={codeLink} scope={scope}></Preview>
                 <h3>Tailles</h3>
                 <Preview code={codeSize} scope={scope}></Preview>
                 <h3>Styles</h3>

@@ -18,15 +18,18 @@ const installNextJs = () => {
             <Highlight className="md">{`npm install next-ariane`}</Highlight>
             <p>Une fois le package installé, modifiez le fichier _app.js se trouvant dans pages/_app.js comme ceci : </p>
             <Highlight className="react">{`import { GeneralProvider } from 'next-ariane'
+import {useContext} from 'react'
 import '../styles/globals.css'
+import {ThemeColors, ThemeContext, GlobalStyle} from 'next-ariane'
 
 function MyApp({ Component, pageProps }) {
-  return(
-    <GeneralProvider>
-        <Component {...pageProps} />
-    </GeneralProvider>
-  ) 
-  
+    const colors = ThemeColors[useContext(ThemeContext).theme]
+    return(
+        <GeneralProvider theme='light'>
+            <GlobalStyle colors = {colors}/>
+            <Component {...pageProps} />
+        </GeneralProvider>
+    ) 
 }
 export default MyApp`}</Highlight>
             <h2>Exemples : </h2>

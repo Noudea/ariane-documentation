@@ -113,10 +113,9 @@ const liste = () => {
     return (
         <>
             <Container>
-                <h1>SideNavItem</h1>
+                <h1>Liste</h1>
                 <p>
-                    Un composant à utiliser avec le composant SideNav, il permet
-                    de créer un lien dans la navigation.
+                    Un composant liste.
                 </p>
                 <h2>Utilisation</h2>
                 <Highlight className="react">
@@ -129,6 +128,14 @@ const liste = () => {
 ></List>                   
                     `}
                 </Highlight>
+
+                <h3>Format des données</h3>
+                <p>Le schéma des données est formé ainsi : </p>
+                <Highlight>{`
+const listData={['Code','Eat','Sleep','Reapeat']}  
+                `}</Highlight>
+
+
                 <h2>Exemples</h2>
                 <h3>Default</h3>
                 <Preview code={codeDefault} scope={scope}></Preview>
