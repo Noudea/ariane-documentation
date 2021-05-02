@@ -90,16 +90,22 @@ const SideLayout = ({ children, ...props }) => {
                             <SideNav.Item href='/components/tooltip'  width='100%'>
                                 ToolTip
                             </SideNav.Item>
-                            <SideNav.Dropdown textContent='Button' width='100%'>
+                            <SideNav.Dropdown textContent='Buttons' width='100%'>
                                 <SideNav.Item href='/components/button'  width='100%'>
                                     Button
                                 </SideNav.Item>
                                 <SideNav.Item href='/components/iconbutton'  width='100%'>
                                     IconButton
                                 </SideNav.Item>
+                                <SideNav.Item href='/components/lightdarkswitch'  width='100%'>
+                                    LightDarkSwitch
+                                </SideNav.Item>
                             </SideNav.Dropdown>
                             <SideNav.Item href='/components/divider'  width='100%'>
                                 Divider
+                            </SideNav.Item>
+                            <SideNav.Item href='/components/message'  width='100%'>
+                                Message
                             </SideNav.Item>
                             <h4># Navigation</h4>
                             <Divider margin='5' thin width='85%'></Divider>
