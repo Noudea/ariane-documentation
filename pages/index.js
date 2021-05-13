@@ -39,10 +39,10 @@ export default function Home() {
                 </div>
                 <div className='ButtonContainer'>
                     <div className='buttonWrapper'>
-                       <Button color='#f05151' textColor='#f05151' outlined href='#'>Composants</Button>
+                       <Button color='#f05151' bold textColor='#f05151' outlined href='#'>Composants</Button>
                     </div>
                     <div className='buttonWrapper'>
-                        <Button color='#f05151' textColor='white' href='/guides/installNextJs'>Commencer</Button>
+                        <Button color='#f05151'  bold textColor='white' href='/guides/installNextJs'>Commencer</Button>
                     </div>
                 </div>
             </div>
