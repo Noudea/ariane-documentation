@@ -16,14 +16,12 @@ export default function Home() {
             }
             .ButtonContainer {
                 display:flex;
-                width:100%;
             }
             .buttonWrapper {
                 margin-right:10px;
             }
 
             .label {
-                width:100%;
             }
             h1 {
                 font-size : 60px;
@@ -41,10 +39,10 @@ export default function Home() {
                 </div>
                 <div className='ButtonContainer'>
                     <div className='buttonWrapper'>
-                        <Button accent><Link className='button' href='/guides/installNextJs'>Commencer</Link></Button>
+                       <Button color='#f05151' textColor='#f05151' outlined href='#'>Composants</Button>
                     </div>
                     <div className='buttonWrapper'>
-                        <Button accent><Link href='#'>Composants</Link></Button>
+                        <Button color='#f05151' textColor='white' href='/guides/installNextJs'>Commencer</Button>
                     </div>
                 </div>
             </div>
