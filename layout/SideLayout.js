@@ -44,6 +44,14 @@ const SideLayout = ({ children, ...props }) => {
                     <IconButton
                         transparent
                         medium
+                        iconSrc="/svg/home.svg"
+                        href='/'
+                    ></IconButton>
+                </Tooltip>
+                <Tooltip textContent="Guides">
+                    <IconButton
+                        transparent
+                        medium
                         iconSrc="/svg/book-open.svg"
                         onClick={openNav1}
                     ></IconButton>
